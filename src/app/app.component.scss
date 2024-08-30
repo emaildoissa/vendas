@@ -1,10 +1,10 @@
-mat-grid-tile {
-  background: lightblue;
-}
 .example-card {
-  max-width: 400px;
-  color: aliceblue;
+  width: 30%; /* Ajuste a largura para controlar o tamanho das colunas */
+
   align-items: center;
+  background-color: azure;
+  margin: 20px;
+  padding: 20px;
 }
 
 img{
@@ -18,7 +18,3 @@ img{
   justify-content: space-between;
 }
 
-.example-card {
-  width: 30%; /* Ajuste a largura para controlar o tamanho das colunas */
-  margin-bottom: 20px;
-}
