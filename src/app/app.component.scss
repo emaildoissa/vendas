@@ -1,0 +1,24 @@
+mat-grid-tile {
+  background: lightblue;
+}
+.example-card {
+  max-width: 400px;
+  color: aliceblue;
+  align-items: center;
+}
+
+img{
+  width: 50%;
+
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.example-card {
+  width: 30%; /* Ajuste a largura para controlar o tamanho das colunas */
+  margin-bottom: 20px;
+}

@@ -1,0 +1,132 @@
+[
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i5_3470_8gb_ram_ssd_240gb_9838_1_3281b1960cb59536b78e1ea329c91607_20240430203246.png",
+        "nome": "COMPUTADOR INTEL CORE I5 3470 8GB RAM SSD 240GB",
+        "preco": "R$859,90R$ 915,90"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i3_3220_8gb_ram_ssd_240gb_9239_1_8b5dc91bb00621eaeba9854fa66608c7_20240430184827.png",
+        "nome": "COMPUTADOR INTEL CORE I3 3220 8GB RAM SSD 240GB",
+        "preco": "R$769,90"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_monitor_led_19_5_20mk400h_b_hdmi_d_sub_vesa_preto_lg_8344_1_20240430201227.png",
+        "nome": "MONITOR LED 19.5 20MK400H-B HDMI/D-SUB/VESA PRETO -  LG",
+        "preco": "R$502,50"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i5_10400_8gb_ram_ssd_240gb_windows_10_pro_9655_1_0dda3ae258fc163c59dae8cd253ec6ea.png",
+        "nome": "COMPUTADOR INTEL CORE I5 10400 8GB RAM SSD 240GB WINDOWS 10 PRO",
+        "preco": "R$2.069,99R$ 2.119,99"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i3_3220_8gb_ram_ssd_120gb_9215_1_535863b9e36b64d64458c3a4f32c4a58_20240430200920.png",
+        "nome": "COMPUTADOR INTEL CORE I3 3220 8GB RAM SSD 120GB",
+        "preco": "R$799,00"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i3_3220_4gb_ram_ssd_120gb_windows_10_pro_trial_9013_1_96ad785e09c382c59631f505f96f42af_20240430201236.png",
+        "nome": "COMPUTADOR INTEL CORE I3 3220 4GB RAM SSD 120GB WINDOWS 10 PRO TRIAL",
+        "preco": "R$735,99"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i5_3470_8gb_ram_ssd_240gb_windows_10_pro_10694_1_25df8e0b1fb16be8a868be51e4f1da3d_20240430184830.png",
+        "nome": "COMPUTADOR INTEL CORE I5 3470 8GB RAM SSD 240GB WINDOWS 10 PRO",
+        "preco": "R$1.020,00"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i3_3220_8gb_ram_ssd_240gb_windows_10_pro_10692_1_22dca41d244b834241c2948422e4ee06_20240430210747.png",
+        "nome": "COMPUTADOR INTEL CORE I3-3220 8GB RAM SSD 240GB WINDOWS 10 PRO",
+        "preco": "R$898,00"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_nobreak_700va_mini_4_e_biv_s_120v_6_tomadas_preto_1x7ah_nhs_12302_1_80120292f840785a3d269a53de819f14_20240430203302.png",
+        "nome": "NOBREAK 700VA MINI 4 E-BIV/S-120V 6 TOMADAS 1X7AH - NHS",
+        "preco": "R$494,50"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i3_10105_8gb_ram_ssd_240gb_vga_hdmi_11715_1_c16eedd83f0c0f142481c946aedcef9b_20240430203217.png",
+        "nome": "COMPUTADOR INTEL CORE I3 10105 8GB RAM SSD 240GB VGA/HDMI",
+        "preco": "R$1.790,00"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i5_10400f_8gb_ram_ssd_240gb_vga_hdmi_12652_1_0d37272addc0996f984bde4438901e00.png",
+        "nome": "COMPUTADOR INTEL CORE I5 10400F 8GB RAM SSD 240GB VGA/HDMI",
+        "preco": "R$1.999,00"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i3_10105_8gb_ram_ssd_240gb_windows_10_pro_9641_1_cd4d43676e9f43c7c7c3420f4ccf5f84_20240430201843.png",
+        "nome": "COMPUTADOR INTEL CORE I3 10105F 8GB RAM SSD 240GB WINDOWS 10 PRO",
+        "preco": "R$1.890,00"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i5_3470_8gb_ram_ssd_480gb_windows_10_pro_trial_12492_1_cf4d8cea07885c4f216d0c4f29cc15b3_20240430200921.png",
+        "nome": "COMPUTADOR INTEL CORE I5 3470 8GB RAM SSD 480GB WINDOWS 10 PRO TRIAL",
+        "preco": "R$1.020,00"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i7_3770_8gb_ram_ssd_480gb_windows_10_pro_trial_12330_1_1e6d8db60c61daae78fe31345630f69c_20240430203033.png",
+        "nome": "COMPUTADOR INTEL CORE I7 3770 8GB RAM SSD 480GB WINDOWS 10 PRO TRIAL",
+        "preco": "R$1.359,90"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_notebook_15_6_pol_i5_1235u_8gb_ssd_512gb_windows_11_home_lenovo_12724_1_b980963e29401b0791eb43ddc9e15dba_20240430195139.png",
+        "nome": "NOTEBOOK 15.6 POL I5-1235U 8GB SSD 512GB WINDOWS 11 HOME - LENOVO",
+        "preco": "R$3.509,90"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_notebook_v15_15_6_i5_1235u_8gb_ssd_256gb_windows_11_pro_lenovo_13166_1_485df06c892231dcfd1b6a174ebe8b67.png",
+        "nome": "NOTEBOOK V15 15.6 I5-1235U 8GB SSD 256GB WINDOWS 11 PRO - LENOVO",
+        "preco": "R$4.099,90"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_notebook_acer_aspire_3_15_6_intel_core_i3_8gb_ssd_256gb_windows_11_home_13024_1_6c474be923647373f5c2259656ddc9a8_20240430195129.png",
+        "nome": "NOTEBOOK ACER ASPIRE 3 15.6 INTEL CORE I3 8GB SSD 256GB WINDOWS 11 HOME",
+        "preco": "R$2.938,00"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i5_3470_8gb_ram_ssd_240gb_2p_serial_automacao_13010_1_cbdc0bc47d802adb983ca7cd02494aa5_20240430203300.png",
+        "nome": "COMPUTADOR INTEL CORE I5-3470 8GB RAM SSD 240GB 2P SERIAL - AUTOMACÃO",
+        "preco": "R$998,00"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i5_12400_8gb_ram_ssd_480gb_placa_de_video_gt240_windows_11_pro_trial_12996_1_c08be7591ffefec48cd37d6fbdc3d438.png",
+        "nome": "COMPUTADOR INTEL CORE I5 12400 8GB RAM SSD 480GB PLACA DE VÍDEO GT240 WINDOWS 11 PRO TRIAL",
+        "preco": "R$2.335,90"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i3_12100_8gb_ram_ssd_240gb_vga_hdmi_12141_1_72c32f605098651442844207efa86140_20240430202027.png",
+        "nome": "COMPUTADOR INTEL CORE I3 12100 8GB RAM SSD 240GB VGA/HDMI",
+        "preco": "R$1.870,00"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_notebook_lenovo_15_6_pol_intel_core_i3_1215u_4gb_ssd_256gb_windows_11_home_13026_1_9e4f018192178f10f6d5c79efd1c05ed_20240430195830.png",
+        "nome": "NOTEBOOK LENOVO 15.6 POL INTEL CORE I3-1215U 4GB SSD 256GB WINDOWS 11 HOME",
+        "preco": "R$2.794,90"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i5_10400_16gb_ram_ssd_480gb_windows_11_pro_trial_13002_1_028cbdffb49beadad658bfae40ff9feb_20240430195839.png",
+        "nome": "COMPUTADOR INTEL CORE I5 10400 16GB RAM SSD 480GB WINDOWS 11 PRO TRIAL",
+        "preco": "R$2.209,90"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_notebook_15_6_i5_1235u_16gb_ssd_512gb_win_11_home_lenovo_12858_1_8dc183e3ae3f1a194ab030dc1055b9bc_20240430204538.png",
+        "nome": "NOTEBOOK 15.6 I5-1235U 16GB SSD 512GB WIN 11 HOME - LENOVO",
+        "preco": "R$3.595,00"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i5_12400_8gb_ram_ssd_240gb_vga_hdmi_12139_1_ade54ab35f579aff054cdeb3e32af833_20240430201253.png",
+        "nome": "COMPUTADOR INTEL CORE I5 12400 8GB RAM SSD 240GB VGA/HDMI",
+        "preco": "R$2.269,90"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_notebook_15_6_intel_core_i3_1215u_8gb_ssd_256gb_windowns_11_home_lenovo_13174_1_4066860d12039fb55f23b02a44502068.png",
+        "nome": "NOTEBOOK 15.6 INTEL CORE I3 1215U 8GB SSD 256GB WINDOWNS 11 HOME - LENOVO",
+        "preco": "R$2.928,90"
+    },
+    {
+        "foto": "https://images.tcdn.com.br/img/img_prod/571937/180_computador_intel_core_i3_12100_8gb_ram_ssd_240gb_placa_de_video_g210_1gb_windows_10_pro_12650_1_1aed5298cfd0ae42487aa9880deaf36f_20240430202630.png",
+        "nome": "COMPUTADOR INTEL CORE i3 12100 8GB RAM SSD 240GB PLACA DE VÍDEO G210 1GB WINDOWS 10 PRO",
+        "preco": "R$2.102,90"
+    }
+]
