@@ -1,13 +1,18 @@
-
+<mat-toolbar color="primary">
+  <h1>Sigel Informática</h1>
+</mat-toolbar>
 <div class="card-container">
   <mat-card  class="example-card"  *ngFor="let produto of produtos">
     <mat-card-header>
-      <mat-card-title>{{produto.preco}}</mat-card-title>
+      <mat-card-title>Preço distribuidor: {{produto.precoOriginal}}</mat-card-title>
+      <br>
+      <mat-card-title>Preço final: {{produto.precoAjustado}}</mat-card-title>
+
     </mat-card-header>
-    <img mat-card-image class="example-header-image" src= '{{ produto.foto}}' alt="imagem ilustrativa" />
+    <img mat-card-image class="example-header-image" src= '{{ produto.foto}}' alt="foto ilustrativa" />
     <mat-card-content>
       <p>
-        {{ produto.nome}}
+        {{ produto.nome }}
       </p>
     </mat-card-content>
     <mat-card-actions>
