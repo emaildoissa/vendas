@@ -1,0 +1,36 @@
+<mat-grid-list cols="3" rowHeight="700px">
+  <mat-grid-tile *ngFor="let produto of produtos" >
+    <mat-card class="example-card" *ngIf="!produtoSelecionado || produtoSelecionado === produto">
+      <mat-card-header>
+        <mat-card-title class="Titlepreco">Preço final: {{produto.precoAjustado}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image class="img-fluid" src="{{ produto.foto }}" alt="foto ilustrativa" />
+      <mat-card-content>
+        <p>{{ produto.nome }}</p>
+      </mat-card-content>
+
+      <!-- Botão Simular -->
+      <mat-card-actions *ngIf="!produtoSelecionado">
+        <button mat-button class="btn btn-primary rounded-pill px-3" (click)="exibirParcelamento(produto)">
+          Simular
+        </button>
+      </mat-card-actions>
+
+      <!-- Mostra o parcelamento se estiver visível -->
+      <div *ngIf="produto.mostrarParcelamento">
+        <h5>Condições de Parcelamento</h5>
+        <ul>
+          <li>1x de {{ produto.precoAjustado }}</li>
+          <li>2x de {{ (produto.precoAjustado / 2).toFixed(2) }} sem juros</li>
+          <li>3x de {{ (produto.precoAjustado / 3).toFixed(2) }} sem juros</li>
+          <li>4x de {{ (produto.precoAjustado / 4).toFixed(2) }} com juros</li>
+        </ul>
+      </div>
+
+      <!-- Botão Voltar -->
+      <div *ngIf="produtoSelecionado">
+        <button mat-button class="btn btn-secondary" (click)="voltarParaLista()">Voltar</button>
+      </div>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

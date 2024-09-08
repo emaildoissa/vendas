@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,
+    RouterModule,
     CommonModule,
     MatGridListModule,
     MatCardModule,
