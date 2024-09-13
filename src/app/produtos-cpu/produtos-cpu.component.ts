@@ -1,73 +1,108 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
-import {MatGridListModule} from '@angular/material/grid-list';
+
+import { Toppings } from '../enums/toppings.enum';
+import { Produto } from '../model/Produto';
+import { CalculoPrecoService } from '../service/calculo/calculo-preco.service';
+import { ProdutoService } from '../service/produto.service';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-produtos-cpu',
   standalone: true,
-  imports: [MatCard,
+  imports: [
+    MatCard,
     MatToolbarModule,
     MatCardModule,
     RouterLink,
     CommonModule,
-    MatGridListModule
-
-
+    MatGridListModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   templateUrl: './produtos-cpu.component.html',
-  styleUrl: './produtos-cpu.component.scss'
+  styleUrl: './produtos-cpu.component.scss',
 })
-export class ProdutosCpuComponent {
+export class ProdutosCpuComponent implements OnDestroy {
 
-  title = 'vendas';
-  produtos: any[] = [];
-  produtoSelecionado: any = null;  // Controla qual produto está selecionado
+  toppings = new FormControl<Toppings>(Toppings.parcela1);
+  toppingList: Toppings[] = Object.values(Toppings);
 
-  constructor() {
-    import(`../assets/dados.json`).then(data => {
-      this.produtos = data.default;
+  @Input() vetor: Produto[] = [];
+  @Output() produtoSelecionado = new EventEmitter<Produto>();
 
-      // Atualiza os preços com base no percentual
-      const percentualAumento = 15;
-      const fatorAumento = 1 + (percentualAumento / 100);
+  produtoSelecionadoAtual: Produto | null = null;
 
-      // Adiciona a propriedade 'mostrarParcelamento' a cada produto
-      this.produtos = this.produtos.map(produto => {
-        const precoNumerico = parseFloat(produto.preco.replace('R$', '').replace('.', '').replace(',', '.').trim());
+  constructor(private service: ProdutoService, private calculoPrecoService: CalculoPrecoService ) {}
 
-        if (isNaN(precoNumerico)) {
-          console.warn(`Preço inválido para o produto ${produto.nome}: ${produto.preco}`);
-          return produto;
-        }
+  private unsubscribe$ = new Subject<void>();
 
-        const precoAjustado = precoNumerico * fatorAumento;
-
-        return {
-          ...produto,
-          precoOriginal: `R$${precoNumerico.toFixed(2).replace('.', ',')}`,
-          precoAjustado: `R$${precoAjustado.toFixed(2).replace('.', ',')}`,
-          mostrarParcelamento: false  // Propriedade para controlar a exibição do parcelamento
-        };
-      });
-    }).catch(error => {
-      console.error('Erro ao carregar dados:', error);
-    });
+  ngOnInit(){
+    this.selecionar();
   }
 
-  // Função para exibir o parcelamento e ocultar os outros produtos
-  exibirParcelamento(produto: any) {
-      this.produtoSelecionado = produto;  // Armazena o produto selecionado
-      produto.mostrarParcelamento = !produto.mostrarParcelamento;  // Alterna a exibição do parcelamento
+
+  selecionar(): void {
+    this.service.selecionar().subscribe(retorno => {
+      // Formata o preço de cada produto
+      this.vetor = retorno.map(produto => {
+        //produto.precoNumerico = this.calculoPrecoService.formatarPreco(produto.preco);
+        produto.precoFinal = this.calculoPrecoService.aplicarPorcentagem(produto.preco, 40);
+        produto.toppingsControl = new FormControl(null);
+        produto.toppingsControl.valueChanges
+        .pipe(takeUntil(this.unsubscribe$))
+        .subscribe((topping: Toppings) => {
+          this.atualizarParcelamento(produto, topping);
+        });
+        return produto;
+      });
+    });
+
+  }
+
+  exibirParcelamento(produto: Produto) {
+    produto.mostrarParcelamento = !produto.mostrarParcelamento;
+
+    // Se o parcelamento for exibido, calcula o valor parcelado
+    if (produto.mostrarParcelamento) {
+
+      const toppingSelecionado = produto.toppingsControl?.value as Toppings;
+      produto.precoParcelado = this.calculoPrecoService.obterValorParcela(produto.preco, toppingSelecionado);
+    } else {
+      // Se o parcelamento for oculto, restaura o preço original
+      produto.precoFinal = this.calculoPrecoService.aplicarPorcentagem(produto.preco, 40);
+
+
+    }
+  }
+
+   atualizarParcelamento(produto: Produto, topping: Toppings) {
+    // Atualiza o preço formatado com o valor parcelado
+    if (topping !== null && topping !== undefined) {
+      produto.precoParcelado = this.calculoPrecoService.obterValorParcela(produto.preco, topping);
+      }
     }
 
-  // Função para retornar à lista de produtos
-  voltarParaLista() {
-    this.produtoSelecionado = null;  // Define o produto selecionado como nulo para mostrar todos os produtos novamente
-    this.produtos.forEach(produto =>{
-      produto.mostrarParcelamento = false;
-    });
+  voltarParaLista(produto: Produto) {
+    produto.mostrarParcelamento = false;
+    //this.toppings.reset();
+    // Volta ao preço formatado original ao fechar a seção de parcelamento
+    if (!produto.mostrarParcelamento) {
+      //produto.preco = this.calculoPrecoService.aplicarPorcentagem(produto.preco, 40);
+    }
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 }

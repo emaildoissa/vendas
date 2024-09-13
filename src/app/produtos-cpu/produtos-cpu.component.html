@@ -1,35 +1,37 @@
-<mat-grid-list cols="3" rowHeight="700px">
-  <mat-grid-tile *ngFor="let produto of produtos" >
-    <mat-card class="example-card" *ngIf="!produtoSelecionado || produtoSelecionado === produto">
+<mat-grid-list cols="3" rowHeight="550px">
+  <mat-grid-tile class="grid-vendas" *ngFor="let produto of vetor">
+    <mat-card class="card-vendas">
       <mat-card-header>
-        <mat-card-title class="Titlepreco">Preço final: {{produto.precoAjustado}}</mat-card-title>
+        <mat-card-title class="Title-preco">{{produto.nome}}</mat-card-title>
+
       </mat-card-header>
+      <p>Preço de custo - {{ produto.preco }}</p>
       <img mat-card-image class="img-fluid" src="{{ produto.foto }}" alt="foto ilustrativa" />
       <mat-card-content>
-        <p>{{ produto.nome }}</p>
+        <p >A partir de {{ produto.precoFinal | currency: 'BRL' : 'symbol' : '2.0-0' }}</p>
       </mat-card-content>
-
-      <!-- Botão Simular -->
-      <mat-card-actions *ngIf="!produtoSelecionado">
-        <button mat-button class="btn btn-primary rounded-pill px-3" (click)="exibirParcelamento(produto)">
-          Simular
+      <!-- Botão Parcelamento, controlado individualmente por produto -->
+      <mat-card-actions *ngIf="!produto.mostrarParcelamento">
+        <button class="btn btn-primary rounded-pill align-content-lg-around" (click)="exibirParcelamento(produto)">
+          Parcelamento
         </button>
       </mat-card-actions>
+      <!-- Seção de Parcelamento -->
+      <div class="parcelamento-div" *ngIf="produto.mostrarParcelamento">
+        <mat-form-field>
+          <mat-label>Parcelamento</mat-label>
 
-      <!-- Mostra o parcelamento se estiver visível -->
-      <div *ngIf="produto.mostrarParcelamento">
-        <h5>Condições de Parcelamento</h5>
-        <ul>
-          <li>1x de {{ produto.precoAjustado }}</li>
-          <li>2x de {{ (produto.precoAjustado / 2).toFixed(2) }} sem juros</li>
-          <li>3x de {{ (produto.precoAjustado / 3).toFixed(2) }} sem juros</li>
-          <li>4x de {{ (produto.precoAjustado / 4).toFixed(2) }} com juros</li>
-        </ul>
-      </div>
+          <mat-select [formControl]="produto.toppingsControl">
 
-      <!-- Botão Voltar -->
-      <div *ngIf="produtoSelecionado">
-        <button mat-button class="btn btn-secondary" (click)="voltarParaLista()">Voltar</button>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">
+              {{ topping }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p>Preço Parcelado: {{ produto.toppingsControl?.value }} de {{  produto.precoParcelado | currency: 'BRL' : 'symbol' : '2.0-0'  }}</p>
+        <div>
+          <button class="btn btn-secondary btn-voltar" (click)="voltarParaLista(produto)">Voltar</button>
+        </div>
       </div>
     </mat-card>
   </mat-grid-tile>
