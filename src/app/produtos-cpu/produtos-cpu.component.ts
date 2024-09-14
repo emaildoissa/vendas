@@ -57,7 +57,7 @@ export class ProdutosCpuComponent implements OnDestroy {
       this.vetor = retorno.map(produto => {
         //produto.precoNumerico = this.calculoPrecoService.formatarPreco(produto.preco);
         produto.precoFinal = this.calculoPrecoService.aplicarPorcentagem(produto.preco, 40);
-        produto.toppingsControl = new FormControl(null);
+        produto.toppingsControl = new FormControl('');
         produto.toppingsControl.valueChanges
         .pipe(takeUntil(this.unsubscribe$))
         .subscribe((topping: Toppings) => {
@@ -77,11 +77,11 @@ export class ProdutosCpuComponent implements OnDestroy {
 
       const toppingSelecionado = produto.toppingsControl?.value as Toppings;
       produto.precoParcelado = this.calculoPrecoService.obterValorParcela(produto.preco, toppingSelecionado);
+
+      console.log(Toppings);
     } else {
       // Se o parcelamento for oculto, restaura o preço original
       produto.precoFinal = this.calculoPrecoService.aplicarPorcentagem(produto.preco, 40);
-
-
     }
   }
 
@@ -94,10 +94,12 @@ export class ProdutosCpuComponent implements OnDestroy {
 
   voltarParaLista(produto: Produto) {
     produto.mostrarParcelamento = false;
-    //this.toppings.reset();
+
     // Volta ao preço formatado original ao fechar a seção de parcelamento
     if (!produto.mostrarParcelamento) {
+
       //produto.preco = this.calculoPrecoService.aplicarPorcentagem(produto.preco, 40);
+      produto.toppingsControl = new FormControl('');
     }
   }
 
