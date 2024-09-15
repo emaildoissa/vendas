@@ -1,11 +1,11 @@
-<mat-grid-list cols="3" rowHeight="550px">
+<mat-grid-list class = "grid-list" cols="3" rowHeight="550px">
   <mat-grid-tile class="grid-vendas" *ngFor="let produto of vetor">
     <mat-card class="card-vendas">
       <mat-card-header>
         <mat-card-title class="Title-preco">{{produto.nome}}</mat-card-title>
 
       </mat-card-header>
-      <p>Preço de custo - {{ produto.preco | currency: 'BRL' : 'symbol' : '2.0-0' }}</p>
+      <p>Preço de custo - {{ produto.preco | currency: 'BRL' : 'symbol' : '2.0-2' }}</p>
       <img mat-card-image class="img-fluid" src="{{ produto.foto }}" alt="foto ilustrativa" />
       <mat-card-content>
         <p >A partir de {{ produto.precoFinal | currency: 'BRL' : 'symbol' : '2.0-2' }}</p>
