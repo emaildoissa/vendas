@@ -1,5 +1,6 @@
 mat-toolbar {
   background: #007CC9 ;
+
   .notification-label {
     position: absolute;
     top: 0;
@@ -36,7 +37,65 @@ mat-toolbar {
     }
   }
 }
+.barra-pesquisa{
+font-size: 14px;
+}
 
+ul {
+  font-size: 14px;
+}
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.main-header2{
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-header2 li{
+  text-decoration: none;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.main-header2 ul{
+  list-style: none;
+  display: inline-flex;
+  margin: 0px;
+  padding: 0px;
+}
+
+.main-header2 h1{
+  color: rgb(255, 255, 255);
+  margin: 0;
+  font-size: 40px;
+}
+.main-header2 li a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.main-header2 .barra-pesquisa {
+  margin-top: 5px;
+  flex: 1;
+  display: flex;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.main-header2 .barra-pesquisa input{
+  flex: 1;
+  color: antiquewhite;
+  border: 1px solid teal;
+  height: 30px;
+  border-right:  0px;
+}
+
+.main-header2 .barra-pesquisa button{
+
+  border: 1px solid teal;
+  height: 35px;
+  border-left:  0px;
+}
+

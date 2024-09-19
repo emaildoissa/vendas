@@ -1,13 +1,10 @@
 .card-vendas {
   align-items: center;
   width: 400px;
-  height: auto;
-  position: initial;
-  min-height: 660px;
 }
 
 mat-grid-tile {
-  background: lightsalmon;
+  background: black;
 
 }
 
@@ -35,5 +32,10 @@ img{
 }
 .parcelamento-div{
   margin-top: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
+}
+
+.parcelamento-select{
+    opacity: 0.75;
+    font-size: 0.75em;
 }
