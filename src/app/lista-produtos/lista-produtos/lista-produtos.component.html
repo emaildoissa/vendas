@@ -1,0 +1,34 @@
+<form [formGroup]="formulario">
+  <input type="text"   name="foto"   placeholder="Foto"   class="form-control" formControlName="id">
+  <input type="text"   name="nome"   placeholder="Nome"   class="form-control" formControlName="nome">
+  <input type="text"   name="preco"  placeholder="Preço"  class="form-control" formControlName="preco">
+
+
+  <input type="button" value="Cadastrar" class="btn btn-primary">
+  <input type="button" value="Alterar"   class="btn btn-primary">
+  <input type="button" value="Remover"   class="btn btn-primary">
+  <input type="button" value="Cancelar"  class="btn btn-primary">
+</form>
+
+<table class="table table-striped">
+  <thead>
+      <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Preço Custo</th>
+          <th>Preço Final</th>
+
+          <th>Selecionar</th>
+      </tr>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let v of vetor, let indice = index">
+          <td>{{v.id}}</td>
+          <td>{{v.nome}}</td>
+          <td>{{v.preco | currency: 'BRL' : 'symbol' : '2.0-2' }}</td>
+          <td>{{v.precoFinal | currency: 'BRL' : 'symbol' : '2.0-2' }}</td>
+          <td><button class="btn btn-primary"(click)=selecionarProduto(indice)>Selecionar</button></td>
+      </tr>
+  </tbody>
+</table>

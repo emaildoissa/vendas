@@ -38,7 +38,9 @@ mat-toolbar {
   }
 }
 .barra-pesquisa{
-font-size: 14px;
+  justify-content:flex-start;
+  font-size: 14px;
+
 }
 
 ul {
@@ -82,20 +84,16 @@ ul {
   display: flex;
   margin-left: 5%;
   margin-right: 5%;
+  align-items: center;
+
 }
 
-.main-header2 .barra-pesquisa input{
-  flex: 1;
-  color: antiquewhite;
-  border: 1px solid teal;
-  height: 30px;
-  border-right:  0px;
-}
 
 .main-header2 .barra-pesquisa button{
 
   border: 1px solid teal;
   height: 35px;
   border-left:  0px;
+  margin-left: 20px;
 }
 

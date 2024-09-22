@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 
 import { Toppings } from '../enums/toppings.enum';
@@ -22,6 +23,8 @@ import { ProdutoService } from '../service/produto.service';
     MatToolbarModule,
     MatCardModule,
     RouterLink,
+    RouterOutlet,
+    MatButtonModule,
     CommonModule,
     MatGridListModule,
     MatSelectModule,

@@ -11,7 +11,7 @@
       </mat-card-content>
       <!-- Botão Parcelamento, controlado individualmente por produto -->
       <mat-card-actions *ngIf="!produto.mostrarParcelamento">
-        <button class="btn btn-primary rounded-pill align-content-lg-around" (click)="exibirParcelamento(produto)">
+        <button mat-flat-button (click)="exibirParcelamento(produto)">
           Parcelamento
         </button>
       </mat-card-actions>
@@ -27,7 +27,7 @@
         </mat-form-field>
         <p>{{ nomePreco }} {{ getFormControl(produto.id)?.value }} : {{ produto.precoParcelado | currency: 'BRL' : 'symbol' : '2.0-0' }}</p>
         <div>
-          <button class="btn btn-secondary btn-voltar" (click)="selecionar()">Voltar</button>
+          <button mat-flat-button (click)="selecionar()">Voltar</button>
         </div>
       </div>
     </mat-card>
