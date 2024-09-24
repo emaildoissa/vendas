@@ -52,6 +52,23 @@ export class ListaProdutosComponent {
       preco: this.vetor[indice].preco,
       foto: this.vetor[indice].foto
     })
-console.log(this.vetor[indice].preco);
+  }
+
+  alterarProduto(){
+    let produtoAtualizado = {
+      ...this.formulario.value,
+      preco: parseFloat(this.formulario.value.preco)
+    } as Produto;
+
+    this.produtoService.alterar(produtoAtualizado)
+    .subscribe(retorno => {
+      const indiceAlterado = this.vetor.findIndex(obj => obj.id === retorno.id);
+
+      this.vetor[indiceAlterado] = {
+        ...retorno,
+        precoFinal: this.calculoPrecoService.aplicarPorcentagem(retorno.preco,40)
+      };
+      this.formulario.reset();
+    })
   }
 }
