@@ -85,19 +85,14 @@ export class ProdutosCpuComponent implements OnInit, OnDestroy {
   exibirParcelamento(produto: Produto) {
     produto.mostrarParcelamento = !produto.mostrarParcelamento;
 
-    // Se o parcelamento for exibido, calcula o valor parcelado
-   // if (produto.mostrarParcelamento) {
-      //const toppingSelecionado = produto.toppingsControl?.value as Toppings;
-      //produto.precoParcelado = this.calculoPrecoService.obterValorParcela(produto.preco, toppingSelecionado);
-      //console.log(Toppings);
-   // }
   }
 
    atualizarParcelamento(produto: Produto, topping: Toppings) {
     // Atualiza o preço formatado com o valor parcelado
     if (topping !== null && topping !== undefined) {
       produto.precoParcelado = this.calculoPrecoService.obterValorParcela(produto.preco, topping);
-      produto.precoFinal = produto.precoParcelado;
+
+      //produto.precoFinal = produto.precoParcelado;
       this.nomePreco = 'Parcelas';
       }
     }
